@@ -6,13 +6,16 @@ class PropertyDescriptor {
     }
 
     constructor(data) {
-        Object.assign(this, PropertyDescriptor.defaults())
+        this.validators = []
         Object.getOwnPropertyNames(data).map ( prop => {
             const desc = Object.getOwnPropertyDescriptor(data, prop)
             Object.defineProperty(this, prop, desc)
         })
     }
 
+    get display() {
+        return this.name !== "id"
+    }
     get label() {
         return _.startCase(this.name)
     }
@@ -20,13 +23,6 @@ class PropertyDescriptor {
     validate(entity) {
         const value = entity[this.name]
         return this.validators.map( v => v.validate(entity, value))
-    }
-}
-
-PropertyDescriptor.defaults = function () {
-    return {
-        display: true,
-        validators: []
     }
 }
 
