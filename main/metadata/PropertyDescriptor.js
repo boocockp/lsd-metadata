@@ -6,6 +6,7 @@ class PropertyDescriptor {
     }
 
     constructor(data) {
+        this.computed = false
         this.validators = []
         Object.getOwnPropertyNames(data).map ( prop => {
             const desc = Object.getOwnPropertyDescriptor(data, prop)
@@ -15,6 +16,9 @@ class PropertyDescriptor {
 
     get display() {
         return this.name !== "id"
+    }
+    get editable() {
+        return !this.computed
     }
     get label() {
         return _.startCase(this.name)

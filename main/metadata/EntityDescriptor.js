@@ -16,11 +16,11 @@ class EntityDescriptor {
     }
     get propertyNames() { return this.propertyDescriptors.map( x => x.name ) }
     get displayProperties() { return this.propertyNames.filter( n => this.propertyDescriptor(n).display) }
-    get defaultValues() { return _.fromPairs( this.propertyDescriptors.filter( pd => !pd.readOnly )
+    get defaultValues() { return _.fromPairs( this.propertyDescriptors.filter( pd => !pd.computed )
         .map( desc => [desc.name, EntityDescriptor.defaultValueForType(desc.type)]))  }
 
     validate(entity) {
-        return _.fromPairs( this.propertyDescriptors.filter( pd => !pd.readOnly )
+        return _.fromPairs( this.propertyDescriptors.filter( pd => pd.editable )
             .map( desc => [desc.name, desc.validate(entity)]))
     }
 
