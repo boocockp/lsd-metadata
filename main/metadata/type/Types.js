@@ -4,5 +4,9 @@ module.exports = {
         if (a === b) return true
         if (a.typeId || b.typeId) return a.typeId === b.typeId
         return a.name === b.name
+    },
+
+    isEntity(type) {
+        return !!type.entityDescriptor
     }
 }

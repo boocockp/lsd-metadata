@@ -1,4 +1,4 @@
-import List from 'immutable'
+import {List} from 'immutable'
 import _ from 'lodash'
 import PropertyDescriptor from './PropertyDescriptor'
 
