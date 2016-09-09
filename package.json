@@ -2,7 +2,7 @@
   "name": "lsd-metadata",
   "description": "Classes for defining business object metadata in LSD applications",
   "author": "Paul Boocock <paulb@ashridgetech.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     "dist"
   ],
