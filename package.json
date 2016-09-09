@@ -1,7 +1,11 @@
 {
   "name": "lsd-metadata",
-  "description": "lsd-metadata",
-  "version": "0.0.1-4",
+  "description": "Classes for defining business object metadata in LSD applications",
+  "author": "Paul Boocock <paulb@ashridgetech.com>",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "babel main -d dist",
     "build-dev": "npm run build && npm version prerelease --no-git-tag",
@@ -23,6 +27,9 @@
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
   },
-  "repository": "http://none",
-  "license": "UNLICENSED"
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/lightweight-software-development/lsd-metadata.git"
+  },
+  "license": "MIT"
 }
